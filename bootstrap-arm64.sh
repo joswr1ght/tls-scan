@@ -45,7 +45,7 @@ export PKG_CONFIG_PATH=${OUTDIR}/lib/pkgconfig
 
 OPENSSL_VERSION="1.0.2-chacha"
 LIBEVENT_VERSION="2.1.10-stable"
-ZLIB_VERSION="zlib-1.3"
+ZLIB_VERSION="zlib-1.3.2"
 
 FILE="${BUILDDIR}/downloads/${OPENSSL_VERSION}.zip"
 if [ ! -f $FILE ]; then
@@ -61,7 +61,7 @@ mv PeterMosmans-openssl-${OPENSSL_VERSION} openssl-arm64
 cd openssl-arm64
 
 cd ${BUILDDIR}/downloads
-curl -OL https://www.zlib.net/${ZLIB_VERSION}.tar.gz
+curl -OL https://www.zlib.net/fossils/${ZLIB_VERSION}.tar.gz
 
 cd ${BUILDDIR}/build
 tar -zxvf ${BUILDDIR}/downloads/${ZLIB_VERSION}.tar.gz
