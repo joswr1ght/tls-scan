@@ -1535,7 +1535,8 @@ int main(int argc, char **argv)
   op.tls1_1 = false;
   op.tls1_2 = false;
   op.protocol_adapter_index = -1;
-  char alpn[DEFAULT_ALPNLEN];
+  // Initialize to zero to prevent garbage data when -A is not provided.
+  char alpn[DEFAULT_ALPNLEN] = {0};
   int tmsec = 0;
   int tsec = 0;
   while ((opt = getopt_long(argc,
