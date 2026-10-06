@@ -99,9 +99,11 @@ cd libevent-arm64
 make
 make install prefix=${OUTDIR}
 
+# ftp.gnu.org has been unreachable (TCP connect to :443 times out); a GNU mirror
+# serves the identical tarball (sha256 75cca199...dadc9419).
 echo "Downloading nettle_3.5.1."
 cd ${BUILDDIR}/downloads
-curl -OL https://ftp.gnu.org/gnu/nettle/nettle-3.5.1.tar.gz
+curl -OL https://mirrors.kernel.org/gnu/nettle/nettle-3.5.1.tar.gz
 
 cd ${BUILDDIR}/build
 tar -zxvf ${BUILDDIR}/downloads/nettle-3.5.1.tar.gz
